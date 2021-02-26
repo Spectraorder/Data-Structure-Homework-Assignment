@@ -1,16 +1,19 @@
 def minmax(list1):
     minL = list1[0]
     maxL = list1[0]
-    for i in range(1, len(list1)-1, 2):
+    for i in range(1, len(list1), 2):
         x = list1[i]
-        y = list1[i+1]
+        if(i+1<len(list1)):
+            y = list1[i+1]
+        else:
+            y = x
         if(x>=y):
             smallCan, largeCan = y, x
         else:
             smallCan, largeCan = x, y
         minL = min(smallCan, minL)
         maxL = max(largeCan, maxL)
-    return '(' + str(minL) + ', '+ str(maxL) + ')'
+    return (minL, maxL)
 
 
 def main():
