@@ -1,0 +1,4 @@
+By definition of Big-O notation, we know that 
+T(n) is O(f(n)) if and only if exists two constants C and n0 that: T(n) < Cf(n) when n > n0.
+So for O(n^2) and O(nlogn)-time algorithm: it might be the case that T(n) for O(n^2) is smaller
+than T(n) for O(nlogn) for n<100 and larger for n>=100

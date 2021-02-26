@@ -3,10 +3,7 @@ def minmax(list1):
     maxL = list1[0]
     for i in range(1, len(list1)-1, 2):
         x = list1[i]
-        if(i+1<len(list1)):
-            y = list1[i+1]
-        else:
-            y = x
+        y = list1[i+1]
         if(x>=y):
             smallCan, largeCan = y, x
         else:
