@@ -1,17 +1,18 @@
 def minmax(list1):
-    smallCan = []
-    largeCan = []
-    for i in range(0, len(list1)):
-        if(i%2==0):
-            largeCan.append(list1[i])
+    minL = list1[0]
+    maxL = list1[0]
+    for i in range(1, len(list1)-1, 2):
+        x = list1[i]
+        if(i+1<len(list1)):
+            y = list1[i+1]
         else:
-            smallCan.append(list1[i])
-    if(len(smallCan)==len(largeCan)):
-        minL = smallCan[0]
-        maxL = largeCan[0]
-        for i in range(0, len(smallCan)):
-            minL = min(smallCan[i], largeCan[i])
-            maxL = max(smallCan[i], largeCan[i])
+            y = x
+        if(x>=y):
+            smallCan, largeCan = y, x
+        else:
+            smallCan, largeCan = x, y
+        minL = min(smallCan, minL)
+        maxL = max(largeCan, maxL)
     return '(' + str(minL) + ', '+ str(maxL) + ')'
 
 
